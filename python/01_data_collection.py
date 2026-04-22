@@ -69,8 +69,12 @@ def fetch_macro_data():
     for series_id, col_name in series.items():
         url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series_id}"
         try:
-            df = pd.read_csv(url, parse_dates=["DATE"])
-            df.rename(columns={"DATE": "date", "VALUE": col_name}, inplace=True)
+            df = pd.read_csv(url)
+            df.columns = [c.strip() for c in df.columns]
+            date_col = df.columns[0]
+            val_col  = df.columns[1]
+            df.rename(columns={date_col: "date", val_col: col_name}, inplace=True)
+            df["date"] = pd.to_datetime(df["date"])
             df = df[df["date"] >= START_DATE]
             df[col_name] = pd.to_numeric(df[col_name], errors="coerce")
             frames.append(df.set_index("date"))

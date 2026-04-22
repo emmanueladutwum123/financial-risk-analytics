@@ -234,7 +234,7 @@ def plot_monte_carlo(results: pd.DataFrame, summary: dict):
 if __name__ == "__main__":
     engine = create_engine(DB_URL)
     returns = load_returns(engine)
-    print(f"Loaded returns: {returns.shape} ({returns.index.min()} → {returns.index.max()})")
+    print(f"Loaded returns: {returns.shape} ({returns.index.min()} to {returns.index.max()})")
 
     var_report(returns)
     metrics = portfolio_metrics(returns)
