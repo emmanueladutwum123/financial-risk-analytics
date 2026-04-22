@@ -2,7 +2,7 @@
 
 A quantitative risk analytics system covering S&P 500 sector ETFs and macroeconomic regimes. Demonstrates end-to-end analytics: data engineering, advanced SQL, statistical modelling, and interactive visualisation.
 
-**[Live Tableau Dashboard →](https://public.tableau.com/app/profile/emmanuel.adutwum)**
+**[Live Tableau Dashboard →](https://emmanueladutwum123.github.io/financial-risk-analytics/)**
 
 ---
 
